@@ -2,8 +2,7 @@ name: Branch Based Job
 
 on:
  push :
-   branches:
-     - master
+   branches:  [ master ]
 
 jobs:
     job1 :
