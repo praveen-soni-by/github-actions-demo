@@ -1,0 +1,14 @@
+name: Branch Based Job
+
+on:
+ push :
+   branches:  [ master ]
+
+jobs:
+    job1 :
+      name : On commit master branch
+      runs-on: ubuntu-latest #On which machine we should run the job *
+      steps :
+        - uses: actions/checkout@v2
+        - name: Print Evn variables 
+          run : env | sort
