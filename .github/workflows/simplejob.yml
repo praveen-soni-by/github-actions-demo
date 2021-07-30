@@ -1,17 +1,13 @@
-name: hello
+name: Simple Job
 
 on: [push]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+   job1 :
+      name : Job One
+      runs-on: ubuntu-latest
+      steps:
+       - name: Checkout code STEP 1
+       - uses: actions/checkout@v1
+       - name: Print env details STEP 2
+         run: env | sort
