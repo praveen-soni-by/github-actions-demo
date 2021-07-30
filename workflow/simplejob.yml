@@ -1,0 +1,22 @@
+name : Simple workflow
+on :  push
+
+jobs :
+    job1 :
+       name : First job
+       runs-on : ubuntu-latest
+       steps :
+          - name : Step One
+            uses : action/checkout@V2
+          - name : Step Two
+            run : evn | sort 
+
+    job2 :
+       name : Second job
+       runs-on : windows-latest 
+       steps :  
+          - name : Step One
+            uses : action/checkout@V2
+          - name : Step Two
+            run : "Get-Child-Item Env | Sort-Object Name" 
+  
