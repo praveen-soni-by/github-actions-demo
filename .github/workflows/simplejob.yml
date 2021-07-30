@@ -3,11 +3,11 @@ name: Simple Job
 on: [push]
 
 jobs:
+
    job1 :
       name : Job One
       runs-on: ubuntu-latest
       steps:
-       - name: Checkout code STEP 1
        - uses: actions/checkout@v1
        - name: Print env details STEP 2
          run: env | sort
