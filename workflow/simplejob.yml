@@ -1,22 +1,17 @@
-name : Simple workflow
-on :  push
+name: hello
 
-jobs :
-    job1 :
-       name : First job
-       runs-on : ubuntu-latest
-       steps :
-          - name : Step One
-            uses : action/checkout@V2
-          - name : Step Two
-            run : evn | sort 
+on: [push]
 
-    job2 :
-       name : Second job
-       runs-on : windows-latest 
-       steps :  
-          - name : Step One
-            uses : action/checkout@V2
-          - name : Step Two
-            run : "Get-Child-Item Env | Sort-Object Name" 
-  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
